@@ -1,11 +1,23 @@
 <div class="container">
-    <h1>Registro de Candidatos</h1>
-    <br>
-    <input type="text" [(ngModel)]="nombre" placeholder="Ingrese el candidato" />
-    <br>
-    <input type="text" [(ngModel)]="binomio" placeholder="Ingrese el binomio" />
-    <br>
-    <button (click)="enviar()">Registrar</button>
+  <h1>Registro de Candidatos</h1>
+  <br>
+  <input type="text" [(ngModel)]="nombre" placeholder="Ingrese el candidato" />
+  <br>
+  <input type="text" [(ngModel)]="binomio" placeholder="Ingrese el binomio" />
+  <br>
+  <button (click)="enviar()">Registrar</button>
 
-  </div>
-  
+  <hr>
+
+  <h2>Lista de Candidatos Registrados</h2>
+  <table border="1">
+      <tr>
+          <th>Nombre</th>
+          <th>Binomio</th>
+      </tr>
+      <tr *ngFor="let candidato of candidatos">
+          <td>{{ candidato.nombre }}</td>
+          <td>{{ candidato.binomio }}</td>
+      </tr>
+  </table>
+</div>
